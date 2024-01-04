@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Панель админа</title>
-    <link rel="stylesheet" href="css/adminPanel.css">
+    <link rel="stylesheet" href="resources/css/adminPanel.css">
 </head>
 <body>
     <div class="panel">
         <div class="header">
-            <img src="img/user.png" alt="" class="profile">
-            <p class="name">Имя Фамилия</p>
+            <img src="resources/imgs/user.png" alt="" class="profile">
+            <p class="name" th:text="${name}">Имя Фамилия</p>
         </div>
         <div class="right-side">
             <div class="block">

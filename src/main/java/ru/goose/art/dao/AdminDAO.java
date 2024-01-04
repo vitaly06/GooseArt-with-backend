@@ -1,17 +1,14 @@
 package ru.goose.art.dao;
 
 import org.springframework.stereotype.Component;
-import ru.goose.art.models.Person;
+import ru.goose.art.models.Admin;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Objects;
 
 @Component
-public class PersonDAO {
-    public PersonDAO() {
+public class AdminDAO {
+    public AdminDAO() {
 
     }
 
@@ -30,19 +27,21 @@ public class PersonDAO {
             throw new RuntimeException(e);
         }
     }
-    // Добавление заявки
-    public boolean save(Person person) {
+    // Вход в панель админа
+    public String adminLogin(Admin admin) {
         connect();
         try {
             Statement statement = connection.createStatement();
-            System.out.println(person.getName() + " " + person.getNumber());
-            String SQL = "INSERT INTO APPLICATIONS VALUES('" + person.getName() + "', '" + person.getNumber() + "')";
-            statement.executeUpdate(SQL);
+            System.out.println(admin.getLogin() + " " + admin.getPassword());
+            String SQL = "SELECT NAME FROM ADMINS WHERE LOGIN = '" + admin.getLogin() + "' AND PASSWORD = '" + admin.getPassword() + "';";
+            ResultSet resultSet = statement.executeQuery(SQL);
+            String name = resultSet.getString("name");
+            System.out.println(name);
             connection.close();
-            return true;
+            return name;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            return false;
+            return "";
         }
     }
 }

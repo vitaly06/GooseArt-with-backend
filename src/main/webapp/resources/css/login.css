@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-style: 100%;
+  line-height: 1;
+  font-style: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html {
+  scroll-behavior: smooth;
+}
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-style: inherit;
+  font-weight: 400;
+}
+/* -------------------------- */
+body{
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+    background: url("../imgs/4fon.png") top left/100% 100% no-repeat;
+}
+.block{  
+    position: absolute;
+    display: table-row;
+    background-color: #6A6FD6;
+    border-radius: 15px;
+    min-width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: white 3px solid;   
+    margin: 11% auto;
+}
+h1{
+    margin-top: 15px;
+    font-size: 48px;
+    color: white;
+    margin-bottom: 15px;
+}
+.first, .second{
+    text-align: center;
+    color: white;
+    font-size: 36px;
+}
+input{
+    border-radius: 10px;
+    font-size: 24px;
+    color: black;
+    display: table-cell;
+    height: 30px;
+    width: 300px;
+}
+label{
+    display: table-cell;
+}
+button {
+    margin: 0 auto;
+    display: table-cell;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    margin-top: 10px;
+    height: 60px;
+    width: 190px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    background: radial-gradient(106.56% 100% at 50% 0%, #31E4FA 0%, #2F6CFF 63.3%, rgba(223, 29, 255, 0.89) 100%);
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+@media only screen and (max-width: 360px){
+    h1{
+        text-align: center;
+        font-size: 36px;
+    }
+    .first, .second{
+        font-size: 24px;
+    }
+    input{
+        width: 200px;
+        font-size: 18px;
+    }
+    button{
+        height: 40px;
+        width: 130px;
+    }
+}
+@media only screen and (max-width: 210px){
+    h1{
+        text-align: center;
+        font-size: 24px;
+    }
+    .first, .second{
+        font-size: 18px;
+    }
+    input{
+        width: 200px;
+        font-size: 18px;
+    }
+    button{
+        height: 40px;
+        width: 130px;
+    }
+}

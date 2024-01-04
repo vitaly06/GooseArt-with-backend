@@ -93,7 +93,7 @@ body{
 }
 .block{
   border-radius: 15px;
-  background: url("../img/rectangle.png") no-repeat;
+  background: url("../imgs/rectangle.png") no-repeat;
 }
 .btn1 {
     display: flex;
