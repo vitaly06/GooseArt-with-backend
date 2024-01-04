@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://thymeleaf.org">
+	<head>
+		<title>FLEXBOX</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<link rel="stylesheet" href="resources/css/style.css" />
+		<meta charset="UTF-8">
+	</head>
+	<body>
+		<div id="openModal" class="modal">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h3 class="modal-title">Записаться</h3>
+				  <a href="#close" title="Close" class="close">×</a>
+				</div>
+				<div class="modal-body">    
+				  <form th:method="POST" th:action="@{/}" class="form-example" th:object="${person}">
+					<div class="form-example">
+					<label class="modall" for="name">ФИО:</label>
+					<input class="modali" style="border: 1px solid black; transform: translateZ(0); color: black;" type="text" name="name" id="name" required>
+					</div>
+					<div class="form-example">
+					<label class="modall" for="number">Номер телефона:</label>
+					<input class="modali" style="border: 1px solid black; transform: translateZ(0); color: black;" type="tel" name="number" id="number">
+					</div>
+						<input class="modal_submit" type="submit" value="Записаться" />
+				  </form>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		<header class="header">
+			<div class="container">		
+				<input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+    			<label for="burger-checkbox" class="burger"></label>		
+				<ul class="menu-list">
+					<li id="hide"><img src="resources/imgs/logo.svg" alt="" class="logo"></li>
+					<li id="hide"><a href="#us" class="gradient">о нас</a></li>
+					<li id="hide"><a href="#professions" id="hide">профессии</a></li>
+					<li id="hide"><a href="#contacts">контактные данные</a></li>
+					<li id="hide"><a href="#openModal"><button class="record">записаться</button></a></li>	
+					<!--<a href="#" id="pull">Меню</a>-->				
+				</ul>				
+			</div>
+		</header>
+
+		<main class="main" id="us">
+			<section class="welcome">
+				<div class="container1">
+					<div class="welcome__textdiv">
+						<h1 class="welcome__title">GooseArt School</h1>
+						<h2 class="welcome__title2">Школа компьютерной графики</h2>
+						<p class="welcome__text">Школа рисунка и цифровой графики "GooseArt" предлагает обучение 3D и 2D рисункам, моделированию и веб-дизайну. В нашей школе вы сможете освоить различные программы для создания качественных проектов, такие как Adobe Photoshop, Adobe Illustrator, Blender и другие. Кроме того, мы планируем внедрить программирование в нашу образовательную программу, чтобы наши студенты могли создавать не только красивые, но и функциональные проекты.</p>
+						<a href="#openModal"><button class="record2">Записаться</button></a>
+						<img src="resources/imgs/turtle.png" alt="" class="turtle">
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<main class="main2">
+			<section class="parent-info">				
+				<div class="container2">
+					<h1 class="parent-info__title">ИНФОРМАЦИЯ <span>ДЛЯ РОДИТЕЛЕЙ</span></h1>					
+						<div class="parent-info__textdiv">
+							<div class="container_text">
+							<ul>
+								<li>Обучение цифровому рисунку с 10 лет</li>
+								<li>Занятия для детей и взрослых</li>
+								<li>Обучение с 0</li>
+								<li>Рисование для взрослых и детей!</li>
+								<li>Хобби которое может стать высокооплачиваемой и востребованной профессией</li>
+							</ul>	
+							</div>			
+					</div>					
+				</div>
+				<img src="resources/imgs/dragon.png" alt="" class="dragon">
+			</section>
+		</main>
+
+		<div class="free_lesson">
+			<h1 class="h_free">ПЕРВОЕ ПРОБНОЕ ЗАНЯТИЕ БЕСПЛАТНО!</h1>
+			<a href="#openModal"><button class="record3">Записаться</button></a>
+		</div>
+
+		<main class="main4" id="professions">
+			<section class="professions">				
+				<div class="container4_text">
+					<h1 class="professions_h">НАШИ <span>ПРОФЕССИИ</span></h1>
+					<a href="#openModal"><button class="record4">Узнать подробнее</button></a>
+				</div>
+				<div class="container4_firstline">
+					<div><img src="resources/imgs/1.png" alt="" class="card1"></div>
+					<div><img src="resources/imgs/2.png" alt="" class="card2"></div>
+				</div>
+				<div class="container4_secondline">
+					<div class="hide_sova"><img src="resources/imgs/sova.png" alt="" class="sova"></div>
+					<div><img src="resources/imgs/3.png" alt="" class="card3"></div>
+					<div><img src="resources/imgs/4.png" alt="" class="card4"></div>
+				</div>
+				<div><img src="resources/imgs/sova.png" alt="" class="sova2"></div>
+			</section>
+		</main>
+
+		<main class="main5">
+			<section class="for">				
+				<div><h1 class="for_h">КОМУ <span>ПОДХОДИТ?</span></h1></div>
+				<div class="for_cards">
+					<div class="first_card">Тем, кто не имеет художественного образования и не работал в арт-индустрии, но хочет освоить творческую профессию.</div>
+					<div class="second_card">Выпускникам художественной школы или колледжа, которым требуется практика, чтобы в будущем работать в арт-индустрии</div>
+					<div class="first_card">Тем, кто хочет разнообразить рутину новым творческим хобби и обрести новые знакомства в арт-сфере</div>
+					<div class="second_card">Тем, кто хочет реализовать собственный творческий проект, но ощущает нехватку базовых знаний и навыков</div>
+
+				</div>
+			</section>
+		</main>
+
+		<main class="main6">
+			<section class="works">				
+				<div class="works_container">
+					<h1 class="works_h">РАБОТЫ <span>КУРАТОРА</span></h1>
+					<div class="block_works">
+						<div class="text">
+							<p>Куратором нашей школы является опытный художник и дизайнер с многолетним опытом работы в арт-индустрии. Она работала в крупных междунородных компаниях, таких как:</p>
+							<ul class="work_list">
+								<li>RedBark Studio (2D-художник,concept artist, visual development ) Минск</li>
+								<li>Saber Interactive Санкт-Петербург, 2D-художник</li>
+								<li>Saritasa Калифорния 2D-художник</li>
+								<li>ROCKSTONE Санкт-Петербург 2D-художник</li>
+							</ul>
+							<br>
+							<p>Так же прошла курсы такие как:</p>							
+							<ul class="work_list">
+								<li>Skills up school – 2D-графика Basic ( 2022г)</li>
+								<li>Smirnov School / Школа цифрового рисунка - Основы Blender (2023г)</li>
+								<li>Grafit academy- Стилизация ( 2023г)</li>
+							</ul>							
+						</div>	
+												<!-- Tailwind CSS -->
+						<script src="https://cdn.tailwindcss.com"></script>
+						<!-- Alpine.js -->
+						<script src="//unpkg.com/alpinejs" defer></script>
+
+						<div class="w-full  flex justify-center">
+							<div class="max-w-[100%] max-h-[632]">
+								<div
+								x-data="{ activeSlide: 1, slideCount: 6 }"
+								class="overflow-hidden relative"
+								>
+								<!-- Slider -->
+								<!-- You can remove x-init if you dont want to autoplay -->
+								<div
+									class="whitespace-nowrap transition-transform duration-500 ease-in-out gallery"
+									:style="'transform: translateX(-' + (activeSlide - 1) * 100.5 + '%)'"
+									x-init="setInterval(() => { activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1 }, 5000)"
+								>
+									<!-- Item 1 -->
+									<div class="inline-block w-full">
+											<img
+												src="resources/imgs/1fon.png"
+												alt=""
+												style="margin: 0 auto;"
+											/>
+									</div>
+									<!-- Item 2 -->
+									<div class="inline-block w-full">
+									<img
+										src="resources/imgs/2fon.jpg"
+										alt=""
+										style="margin: 0 auto;"
+									/>
+									</div>
+									<!-- Item 3 -->
+									<div class="inline-block w-full">
+									<img
+										src="resources/imgs/3fon.png"
+										alt=""
+										style="margin: 0 auto;"
+									/>
+									</div>
+									<!-- Item 4 -->
+									<div class="inline-block w-full">
+										<img
+										src="resources/imgs/4fon.png"
+										alt=""
+										style="margin: 0 auto;"
+										/>
+									</div>
+									<!-- Item 5 -->
+									<div class="inline-block w-full">
+										<img
+										src="resources/imgs/5fon.png"
+										alt=""
+										style="margin: 0 auto;"
+										/>
+									</div>
+									<!-- Item 6 -->
+									<div class="inline-block w-full">
+										<img
+										src="resources/imgs/6fon.png"
+										alt=""
+										style="margin: 0 auto;"
+										/>
+									</div>
+								</div>
+
+								<!-- Prev/Next Arrows -->
+								<div class="absolute inset-0 flex items-center justify-between px-2">
+									<button
+									@click="activeSlide = activeSlide > 1 ? activeSlide - 1 : slideCount"
+									class="w-[30px] h-[30px] flex items-center bg-black/30 text-white p-2 rounded-full"
+									>
+									&#8592;
+									</button>
+									<button
+									@click="activeSlide = activeSlide < slideCount ? activeSlide + 1 : 1"
+									class="w-[30px] h-[30px] flex items-center bg-black/30 text-white p-2 rounded-full"
+									>
+									&#8594;
+									</button>
+								</div>
+
+								<!-- Dots Navigation -->
+								<div
+									class="absolute bottom-0 left-0 right-0 flex justify-center space-x-2 p-4"
+								>
+									<template x-for="slideIndex in slideCount" :key="slideIndex">
+									<button
+										@click="activeSlide = slideIndex"
+										class="h-2 w-2 rounded-full"
+										:class="{'bg-indigo-500': activeSlide === slideIndex, 'bg-white/50': activeSlide !== slideIndex}"
+									></button>
+									</template>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<main class="main7">
+			<section class="pastwork">				
+				<div class="pastwork_container">
+					<h1 class="pastwork_h">ДАЛЬНЕЙШЕЕ <span>ТРУДОУСТРОЙСТВО</span></h1>
+					<div class="pastwork_block">
+						<p class="past1">После окончания нашей дизайн школы, ученики получат не только фундаментальные знания и навыки в области рисования, цифровой графики и дизайна, но и полезный опыт работы над задачами, которые получают художники в геймстудиях. Это позволит им создать собственное портфолио, которое будет являться ключевым инструментом при поиске работы.
+						</p>
+						<p class="past2">
+							Наши выпускники могут претендовать на работу в качестве художников-иллюстраторов, дизайнеров, аниматоров, графических дизайнеров, веб-дизайнеров, UX/UI дизайнеров и многих других творческих профессий. Они также могут работать на фрилансе и предоставлять свои услуги на различных платформах для фрилансеров.
+						</p>
+						<a href="#openModal"><button class="record4">Узнать подробнее</button></a>
+					</div>
+				</div>
+				<div class="contact_container" id="contacts">
+					<h1 class="contact_h">КОНТАКТНЫЕ <span>ДАННЫЕ</span></h1>
+					<p class="city">ОРЕНБУРГ</p>
+					<hr class="line">
+					<p class="address">город Оренбург ул. Кирова 13, Гостиный двор</p>
+					<p class="number">+7 (911) 797-06-86</p>
+				</div>
+			</section>
+		</main>
+		<div class="map">
+		<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A40d278621081333a7ce5fa63ada32adba9c589817ec1bc49a3a9a81137b33d1c&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+	</div>
+	</body>
+	<!--<script>		
+		
+			const smoothLinks = document.querySelectorAll('a[href^="!"]') ;
+			for (let smoothLink of smoothLinks) {
+				smoothLink.addEventListener('click', function (e) {
+					e.preventDefault();
+					const id = smoothLink.getAttribute('href');
+
+					document.querySelector(id).scrollIntoView({
+						behavior: 'smooth',
+						block: 'start'
+					});
+				});
+			};
+	</script>-->
+	<script>
+		function windowOpen(theURL) 
+		{ 
+		window.open(theURL,'','toolbar=0,status=0,scrollbars=0,fullscreen=1'); 
+		} 
+	</script>
+</html>
