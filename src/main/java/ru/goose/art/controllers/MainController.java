@@ -27,7 +27,9 @@ public class MainController {
     StudentDAO studentDAO;
     public boolean isAuth = false;
     public String name;
-    public List<Person> applications;
+    public List<Person> applications; // заявки
+    public List<Student> students_all; // все студенты
+    List<String> options = new ArrayList<String>(); // Профессии
 
     @GetMapping("/")
     public String mainPage() {
@@ -75,23 +77,64 @@ public class MainController {
 
     @PostMapping("/addStudents")
     public String addStudent(@ModelAttribute("student") Student student){
-        int i = 0;
-        /*System.out.println(student.getName());
-        System.out.println(student.getStatus());*/
+        System.out.println(student.getName());
+        String[] names = student.getName().split(",");
         String[] status = student.getStatus().split(",");
+        String[] number = student.getNumber().split(",");
         if (isAuth){
             List<Student> students = new ArrayList<Student>();
-            for (Person person : applications){
-                if (Objects.equals(status[i], "yes")){
-                    students.add(new Student(person.getName(),
-                            person.getNumber(),
-                            0,
-                            "net", "yes"));
+            for (int i = 0; i < names.length; i++){
+                if (!Objects.equals(status[i], "no")){
+                    students.add(new Student(names[i],
+                            number[i],
+                            "0",
+                            "2D-Художник", status[i]));
                 }
-                i++;
             }
             studentDAO.addStudents(students);
             return "redirect:/applications";
+        }
+        return "redirect:/";
+    }
+    // Страница со студентами
+    @GetMapping("/students")
+    public String Students(Model model){
+        List<String> options = new ArrayList<String>(); // Профессии
+        options.add("2D-Художник");
+        options.add("3D-Художник");
+        options.add("Игровая графика");
+        options.add("Веб-дизайн");
+        List<String> options1 = new ArrayList<String>(); // Профессии
+        options1.add("0");
+        options1.add("1");
+        options1.add("2");
+        options1.add("3");
+        if (isAuth){
+            students_all = studentDAO.getAllData();
+            model.addAttribute("students", students_all);
+            model.addAttribute("options", options);
+            model.addAttribute("options1", options1);
+            return "studentsEdit";
+        }
+        return "redirect:/";
+    }
+    // Изменение Студента
+    @PostMapping("/editStudents")
+    public String editStudents(@ModelAttribute("student") Student student){
+        if (isAuth){
+            String[] names = student.getName().split(",");
+            String[] number = student.getNumber().split(",");
+            String[] special = student.getSpecial().split(",");
+            String[] groupe = student.getGroupe().split(",");
+            List<Student> students = new ArrayList<Student>();
+            for (int i = 0; i < names.length; i++){
+                students.add(new Student(names[i],
+                            number[i],
+                            groupe[i],
+                            special[i], "yes"));
+            }
+            studentDAO.EditStudents(students);
+            return "redirect:/students";
         }
         return "redirect:/";
     }

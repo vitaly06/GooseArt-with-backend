@@ -1,15 +1,15 @@
 package ru.goose.art.models;
 
 public class Student {
-    private String name, number;
-    private int groupe;
+    String name, number;
+    private String groupe;
     private String special;
     private String status;
 
     public Student() {
     }
 
-    public Student(String name, String number, int groupe, String special, String status) {
+    public Student(String name, String number, String groupe, String special, String status) {
         this.name = name;
         this.number = number;
         this.groupe = groupe;
@@ -33,11 +33,11 @@ public class Student {
         this.number = number;
     }
 
-    public int getGroupe() {
+    public String getGroupe() {
         return groupe;
     }
 
-    public void setGroupe(int groupe) {
+    public void setGroupe(String groupe) {
         this.groupe = groupe;
     }
 
