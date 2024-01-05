@@ -3,10 +3,9 @@ package ru.goose.art.dao;
 import org.springframework.stereotype.Component;
 import ru.goose.art.models.Person;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Component
@@ -30,6 +29,7 @@ public class PersonDAO {
             throw new RuntimeException(e);
         }
     }
+
     // Добавление заявки
     public boolean save(Person person) {
         connect();
@@ -45,4 +45,24 @@ public class PersonDAO {
             return false;
         }
     }
+
+    public List<Person> getAllData() {
+        List<Person> applications = new ArrayList<Person>();
+        connect();
+        try {
+            Statement statement = connection.createStatement();
+            String SQL = "SELECT * FROM APPLICATIONS";
+            ResultSet resultSet = statement.executeQuery(SQL);
+
+            while (resultSet.next()) {
+                applications.add(new Person(resultSet.getString("name"),
+                        resultSet.getString("number")));
+            }
+            connection.close();
+            return applications;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+

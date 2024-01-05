@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Document</title>
+    <link rel="stylesheet" href="resources/css/applications.css">
+</head>
+<body>
+    <div class="panel">
+        <div class="header">
+            <div class="btn1"><a href="#">Панель админа</a></div>
+        </div>
+        <div class="right-side">
+            <form th:action="POST">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>ФИО</th>
+                        <th>Номер</th>
+                        <th>Статус обработки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:block th:each="person : ${applications}">
+                        <td><span th:text="${person.getName}">ФИО</span></td>
+                        <td><span th:text="${person.getNumber}">Номер</span></td>
+                        <td><select name="status" id="">
+                            <option value="no">нет</option>
+                            <option value="yes">да</option>
+                        </select></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <button class="submit">Сохранить</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

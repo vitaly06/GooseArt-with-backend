@@ -11,6 +11,7 @@ import ru.goose.art.dao.PersonDAO;
 import ru.goose.art.models.Admin;
 import ru.goose.art.models.Person;
 
+import java.util.List;
 import java.util.Objects;
 
 @Controller
@@ -44,5 +45,14 @@ public class MainController {
             return "adminPanel";
         }
         return "redirect:/admin";
+    }
+    @GetMapping("/applications")
+    public String applications(Model model){
+        List<Person> applications = personDAO.getAllData();
+        for(Person person : applications){
+            System.out.println(person.getName() + person.getNumber());
+        }
+        model.addAttribute("applications", applications);
+        return "applications";
     }
 }
