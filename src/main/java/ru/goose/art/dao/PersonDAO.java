@@ -56,7 +56,7 @@ public class PersonDAO {
 
             while (resultSet.next()) {
                 applications.add(new Person(resultSet.getString("name"),
-                        resultSet.getString("number")));
+                        resultSet.getString("number"), "no"));
             }
             connection.close();
             return applications;

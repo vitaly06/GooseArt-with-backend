@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.goose.art.dao.AdminDAO;
 import ru.goose.art.dao.PersonDAO;
+import ru.goose.art.dao.StudentDAO;
 import ru.goose.art.models.Admin;
 import ru.goose.art.models.Person;
+import ru.goose.art.models.Student;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,6 +23,11 @@ public class MainController {
     PersonDAO personDAO;
     @Autowired
     AdminDAO adminDAO;
+    @Autowired
+    StudentDAO studentDAO;
+    public boolean isAuth = false;
+    public String name;
+    public List<Person> applications;
 
     @GetMapping("/")
     public String mainPage() {
@@ -38,21 +46,53 @@ public class MainController {
     }
     // Вход в панель админа
     @PostMapping("/admin")
-    public String panelAdmin(@ModelAttribute("person") Admin admin, Model model){
-        String name = adminDAO.adminLogin(admin);
+    public String panelAdmin(@ModelAttribute("person") Admin admin){
+        name = adminDAO.adminLogin(admin);
         if (!Objects.equals(name, "")){
-            model.addAttribute("name", name);
-            return "adminPanel";
+            isAuth = true;
+            return "redirect:/adminpanel";
         }
         return "redirect:/admin";
     }
+    @GetMapping("/adminpanel")
+    public String panel(Model model){
+        if (isAuth){
+            model.addAttribute("name", name);
+            return "adminPanel";
+        }
+        return "redirect:/";
+    }
+
     @GetMapping("/applications")
     public String applications(Model model){
-        List<Person> applications = personDAO.getAllData();
-        for(Person person : applications){
-            System.out.println(person.getName() + person.getNumber());
+        if (isAuth) {
+            applications = personDAO.getAllData();
+            model.addAttribute("applications", applications);
+            return "applications";
         }
-        model.addAttribute("applications", applications);
-        return "applications";
+        return "redirect:/";
+    }
+
+    @PostMapping("/addStudents")
+    public String addStudent(@ModelAttribute("student") Student student){
+        int i = 0;
+        /*System.out.println(student.getName());
+        System.out.println(student.getStatus());*/
+        String[] status = student.getStatus().split(",");
+        if (isAuth){
+            List<Student> students = new ArrayList<Student>();
+            for (Person person : applications){
+                if (Objects.equals(status[i], "yes")){
+                    students.add(new Student(person.getName(),
+                            person.getNumber(),
+                            0,
+                            "net", "yes"));
+                }
+                i++;
+            }
+            studentDAO.addStudents(students);
+            return "redirect:/applications";
+        }
+        return "redirect:/";
     }
 }

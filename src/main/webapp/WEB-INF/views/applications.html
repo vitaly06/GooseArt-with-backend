@@ -9,10 +9,10 @@
 <body>
     <div class="panel">
         <div class="header">
-            <div class="btn1"><a href="#">Панель админа</a></div>
+            <div class="btn1"><a href="/adminpanel">Панель админа</a></div>
         </div>
         <div class="right-side">
-            <form th:action="POST">
+            <form th:method="POST" th:action="@{/addStudents}" th:object="${student}">
                 <table>
                     <thead>
                     <tr>
@@ -22,7 +22,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:block th:each="person : ${applications}">
+                    <tr th:each="person : ${applications}">
                         <td><span th:text="${person.getName}">ФИО</span></td>
                         <td><span th:text="${person.getNumber}">Номер</span></td>
                         <td><select name="status" id="">

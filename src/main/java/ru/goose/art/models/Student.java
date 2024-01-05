@@ -1,20 +1,19 @@
 package ru.goose.art.models;
 
-import jakarta.validation.constraints.NotEmpty;
-import org.springframework.format.annotation.NumberFormat;
-
-public class Person {
-    @NotEmpty
-    private String name;
-    @NotEmpty
-    private String number;
+public class Student {
+    private String name, number;
+    private int groupe;
+    private String special;
     private String status;
-    public Person(){
 
+    public Student() {
     }
-    public Person(String name, String number, String status){
+
+    public Student(String name, String number, int groupe, String special, String status) {
         this.name = name;
         this.number = number;
+        this.groupe = groupe;
+        this.special = special;
         this.status = status;
     }
 
@@ -32,6 +31,22 @@ public class Person {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public int getGroupe() {
+        return groupe;
+    }
+
+    public void setGroupe(int groupe) {
+        this.groupe = groupe;
+    }
+
+    public String getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(String special) {
+        this.special = special;
     }
 
     public String getStatus() {
