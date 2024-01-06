@@ -6,6 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.telegram.telegrambots.meta.TelegramBotsApi;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+import ru.goose.art.bot.Bot;
 import ru.goose.art.dao.AdminDAO;
 import ru.goose.art.dao.PersonDAO;
 import ru.goose.art.dao.StudentDAO;
@@ -39,6 +43,15 @@ public class MainController {
     @PostMapping("/")
     public String call(@ModelAttribute("person") Person person) {
         personDAO.save(person);
+        try {
+            Bot bot = new Bot();
+            TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+            telegramBotsApi.registerBot(bot);
+            bot.sendAds(person.getName() + " " + person.getNumber());
+
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
         return "redirect:/";
     }
 

@@ -86,6 +86,19 @@
       <artifactId>hibernate-validator</artifactId>
       <version>8.0.1.Final</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.telegram/telegrambots -->
+    <dependency>
+      <groupId>org.telegram</groupId>
+      <artifactId>telegrambots</artifactId>
+      <version>6.8.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.telegram/telegrambotsextensions -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>RELEASE</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
   <build>
     <finalName>GooseArt</finalName>
