@@ -23,7 +23,7 @@ public class StudentDAO {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\123\\Desktop\\java\\GooseArt\\src\\main\\webapp\\GooseArt_db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\fedul\\IdeaProjects\\GooseArt-with-backend\\src\\main\\webapp\\GooseArt_db.s3db");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

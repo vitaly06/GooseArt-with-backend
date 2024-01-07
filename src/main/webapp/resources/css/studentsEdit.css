@@ -155,23 +155,38 @@ select{
     font-size: 22px;
     background: radial-gradient(106.56% 100% at 50% 0%, #31E4FA 0%, #2F6CFF 63.3%, rgba(223, 29, 255, 0.89) 100%);
 }
+@media only screen and (max-width:630px){
+    th{
+        font-size: 18px;
+    }
+    td{
+        font-size: 18px;
+    }
+    select{
+        font-size: 18px;
+    }
+    option{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width:500px){
+    option{
+        font-size: 16px;
+    }
+    th{
+        font-size: 16px;
+    }
+    td{
+        font-size: 16px;
+    }
+    select{
+        font-size: 16px;
+    }
+}
 @media only screen and (max-width:450px){
-    td{
-        font-size: 20px;
+    option{
+        font-size: 14px;
     }
-    select{
-        font-size: 20px;
-    }
-}
-@media only screen and (max-width:350px){
-    td{
-        font-size: 16px;
-    }
-    select{
-        font-size: 16px;
-    }
-}
-@media only screen and (max-width:280px){
     th{
         font-size: 14px;
     }
@@ -180,5 +195,33 @@ select{
     }
     select{
         font-size: 14px;
+    }
+}
+@media only screen and (max-width:400px){
+    option{
+        font-size: 12px;
+    }
+    th{
+        font-size: 12px;
+    }
+    td{
+        font-size: 12px;
+    }
+    select{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width:350px){
+    option{
+        font-size: 10px;
+    }
+    th{
+        font-size: 10px;
+    }
+    td{
+        font-size: 10px;
+    }
+    select{
+        font-size: 10px;
     }
 }

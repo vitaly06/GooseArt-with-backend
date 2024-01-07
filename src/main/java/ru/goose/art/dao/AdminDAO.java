@@ -3,6 +3,10 @@ package ru.goose.art.dao;
 import org.springframework.stereotype.Component;
 import ru.goose.art.models.Admin;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.Objects;
 
@@ -22,7 +26,7 @@ public class AdminDAO {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\123\\Desktop\\java\\GooseArt\\src\\main\\webapp\\GooseArt_db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\fedul\\IdeaProjects\\GooseArt-with-backend\\src\\main\\webapp\\GooseArt_db.s3db");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

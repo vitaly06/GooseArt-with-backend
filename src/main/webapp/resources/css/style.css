@@ -196,6 +196,7 @@ li{
 /* секция 2*/
 .main2 {
   margin-top: 20px;
+  margin-bottom: 35px;
   display: flex;
   max-width: 100%;
   position: relative;
