@@ -26,7 +26,7 @@ public class AdminDAO {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\fedul\\IdeaProjects\\GooseArt-with-backend\\src\\main\\webapp\\GooseArt_db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\123\\Desktop\\java\\GooseArt\\src\\main\\webapp\\GooseArt_db.s3db");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -35,12 +35,18 @@ public class AdminDAO {
     public String adminLogin(Admin admin) {
         connect();
         try {
-            Statement statement = connection.createStatement();
+            /*Statement statement = connection.createStatement();
             System.out.println(admin.getLogin() + " " + admin.getPassword());
             String SQL = "SELECT NAME FROM ADMINS WHERE LOGIN = '" + admin.getLogin() + "' AND PASSWORD = '" + admin.getPassword() + "';";
             ResultSet resultSet = statement.executeQuery(SQL);
             String name = resultSet.getString("name");
-            System.out.println(name);
+            System.out.println(name);*/
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("SELECT NAME FROM ADMINS WHERE LOGIN = ? AND PASSWORD = ?");
+            preparedStatement.setString(1, admin.getLogin());
+            preparedStatement.setString(2, admin.getPassword());
+            ResultSet resultSet = preparedStatement.executeQuery();
+            String name = resultSet.getString("name");
             connection.close();
             return name;
         } catch (SQLException throwables) {

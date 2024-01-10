@@ -24,7 +24,7 @@ public class PersonDAO {
             e.printStackTrace();
         }
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\fedul\\IdeaProjects\\GooseArt-with-backend\\src\\main\\webapp\\GooseArt_db.s3db");
+            connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\123\\Desktop\\java\\GooseArt\\src\\main\\webapp\\GooseArt_db.s3db");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -34,10 +34,11 @@ public class PersonDAO {
     public boolean save(Person person) {
         connect();
         try {
-            Statement statement = connection.createStatement();
-            System.out.println(person.getName() + " " + person.getNumber());
-            String SQL = "INSERT INTO APPLICATIONS VALUES('" + person.getName() + "', '" + person.getNumber() + "')";
-            statement.executeUpdate(SQL);
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("INSERT INTO APPLICATIONS VALUES(?, ?)");
+            preparedStatement.setString(1, person.getName());
+            preparedStatement.setString(2, person.getNumber());
+            preparedStatement.executeUpdate();
             connection.close();
             return true;
         } catch (SQLException throwables) {
@@ -53,7 +54,6 @@ public class PersonDAO {
             Statement statement = connection.createStatement();
             String SQL = "SELECT * FROM APPLICATIONS";
             ResultSet resultSet = statement.executeQuery(SQL);
-
             while (resultSet.next()) {
                 applications.add(new Person(resultSet.getString("name"),
                         resultSet.getString("number"), "no"));
