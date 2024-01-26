@@ -35,12 +35,6 @@ public class AdminDAO {
     public String adminLogin(Admin admin) {
         connect();
         try {
-            /*Statement statement = connection.createStatement();
-            System.out.println(admin.getLogin() + " " + admin.getPassword());
-            String SQL = "SELECT NAME FROM ADMINS WHERE LOGIN = '" + admin.getLogin() + "' AND PASSWORD = '" + admin.getPassword() + "';";
-            ResultSet resultSet = statement.executeQuery(SQL);
-            String name = resultSet.getString("name");
-            System.out.println(name);*/
             PreparedStatement preparedStatement =
                     connection.prepareStatement("SELECT NAME FROM ADMINS WHERE LOGIN = ? AND PASSWORD = ?");
             preparedStatement.setString(1, admin.getLogin());

@@ -51,8 +51,6 @@ public class StudentDAO {
                             connection.prepareStatement("DELETE FROM APPLICATIONS WHERE NUMBER = ?");
                     preparedStatement.setString(1, student.getNumber());
                     preparedStatement.executeUpdate();
-                    /*String SQL = "DELETE FROM APPLICATIONS WHERE NUMBER = '" + student.getNumber() + "';";
-                    statement.executeUpdate(SQL);*/
                 }
             }
             connection.close();
@@ -87,15 +85,9 @@ public class StudentDAO {
     public List<Student> EditStudents(List<Student> students){
         connect();
         try{
-            /*Statement statement = connection.createStatement();
-            String SQL = "DELETE FROM STUDENTS;";
-            statement.executeUpdate(SQL);*/
             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM STUDENTS");
             preparedStatement.executeUpdate();
             for(Student student : students){
-                    /*SQL = "INSERT INTO STUDENTS VALUES('" + student.getName() + "', '" + student.getNumber()
-                            + "', " + student.getGroupe() + ", '" + student.getSpecial()  + "')";
-                    statement.executeUpdate(SQL);*/
                 preparedStatement =
                         connection.prepareStatement("INSERT INTO STUDENTS VALUES(?, ?, ?, ?)");
                 preparedStatement.setString(1, student.getName());
