@@ -33,7 +33,17 @@ public class MainController {
     public String name;
     public List<Person> applications; // заявки
     public List<Student> students_all; // все студенты
+    /*public Bot bot = new Bot();
+    TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+    telegramBotsApi.registerBot();*/
+    public Bot bot = new Bot();
     List<String> options = new ArrayList<String>(); // Профессии
+
+    public MainController() throws TelegramApiException {
+
+        TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
+        telegramBotsApi.registerBot(bot);
+    }
 
     @GetMapping("/")
     public String mainPage() {
@@ -44,9 +54,6 @@ public class MainController {
     public String call(@ModelAttribute("person") Person person) {
         personDAO.save(person);
         try {
-            Bot bot = new Bot();
-            TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
-            telegramBotsApi.registerBot(bot);
             bot.sendAds(person.getName() + " " + person.getNumber());
 
         } catch (TelegramApiException e) {
