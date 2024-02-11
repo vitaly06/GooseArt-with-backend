@@ -178,6 +178,12 @@ li{
   font-weight: 700;
   line-height: 0.9;
 }
+.purple{
+  color: #DB00FF;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+}
 .welcome__text {
   text-align: center;
   margin-top: 10px;
@@ -211,12 +217,18 @@ li{
   position: relative;
 }
 .parent-info {
+  margin: 0 auto;
+  max-width: 1098px;
+  min-width: 1098px;
   min-height: 600px;
   color: #FFFFFF;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
 
+
+}
+.container2 {
 
 }
 /* заголовок*/
@@ -224,12 +236,6 @@ li{
   line-height: 1;
   font-size: 48px;
   font-weight: 700;
-}
-.parent-info__title span{
-  background: linear-gradient(90.53deg, #31C6FC 30.04%, #B826E9 92.19%),
-  linear-gradient(0deg, #FFFFFF, #FFFFFF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .parent-info__title::before{
   display: inline-block;
@@ -244,7 +250,6 @@ li{
   width: 100%;
 }
 .parent-info__textdiv{
-  margin-left: 70px;
   max-width: 865px;
   display: flex;
   justify-content: center;
@@ -272,11 +277,8 @@ li{
   display: inline-block; /* Расстояние между точкой и текстом */
   width: 1em; /* Задать значение расстояния */
 }
-.container2 {
-  max-width: 100%;
-}
 .dragon{
-  height: auto;
+  height: 70%;
   width: auto;
   z-index: 300;
   position: absolute;
@@ -318,9 +320,6 @@ li{
   background: radial-gradient(106.56% 100% at 50% 0%, #31E4FA 0%, #2F6CFF 63.3%, rgba(223, 29, 255, 0.89) 100%);
 }
 /* СЕКЦИЯ 4*/
-.sova2{
-  display: none;
-}
 .main4{
 }
 .professions{}
@@ -356,15 +355,13 @@ li{
   line-height: 1.6;
   background: radial-gradient(106.56% 100% at 50% 0%, #31E4FA 0%, #2F6CFF 63.3%, rgba(223, 29, 255, 0.89) 100%);
 }
-.sova{
-  max-height: 400px;
-}
 
 /* 1 LINE OF CARDS */
 .container4_firstline{
+  flex-wrap: wrap;
   margin: 0 auto;
-  max-width: 796px;
-  max-height: 500px;
+  max-width: 100%;
+  max-height: 900px;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
@@ -379,18 +376,6 @@ li{
   /* CHANGE PICTURE */
   background: top right/auto auto no-repeat;
 }
-.container4_secondline{
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: 440px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-end;
-}
-/*.sova{
-  max-width: 298px;
-  flex-wrap: wrap;
-}*/
 .card3{
   /* CHANGE PICTURE */
   background: top left/auto auto no-repeat;
@@ -399,48 +384,7 @@ li{
   /* CHANGE PICTURE */
   background: top right/auto auto no-repeat;
 }
-/* SECTION 5*/
 
-/*.main5{
-  margin-top: 20px;
-  max-width: 100%;
-}
-.for_h::before{
-  display: inline-block;
-  content: url("../img/cube2.png");
-  vertical-align: middle;
-}
-.for_h{
-  margin-left: 7%;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 1;
-}
-.for_h span{
-  background: linear-gradient(90.53deg, #31C6FC 30.04%, #B826E9 92.19%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.for_cards{
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 1;
-  display: flex;
-}
-.first_card{
-  box-sizing: border-box;
-  padding: 3%;
-  background: url("../img/for1.png") no-repeat;
-  background-size: cover;
-  width: 25%;
-}
-.second_card{
-  box-sizing: border-box;
-  padding: 3%;
-  background: url("../img/for2.png") no-repeat;
-  background-size: cover;
-  width: 25%;
-}*/
 /* секция 5*/
 .main5 {
   margin-top: 20px;
@@ -450,13 +394,21 @@ li{
   position: relative;
 }
 .for {
+  margin: 0 auto;
+  min-width: 1098px;
+  max-width: 1098px;
   min-height: 600px;
   color: #FFFFFF;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
-
-
+  justify-content: flex-start;
+}
+.container3{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 /* заголовок*/
 .for_h{
@@ -483,7 +435,6 @@ li{
   width: 100%;
 }
 .parent-info__textdiv2{
-  margin-left: 70px;
   max-width: 865px;
   display: flex;
   justify-content: center;
@@ -517,11 +468,8 @@ li{
   display: inline-block; /* Расстояние между точкой и текстом */
   width: 1em; /* Задать значение расстояния */
 }
-.container3 {
-  max-width: 100%;
-}
 .eight{
-  height: auto;
+  height: 50%;
   width: auto;
   z-index: 300;
   position: absolute;
@@ -555,9 +503,9 @@ li{
   vertical-align: middle;
 }
 .masha{
-  max-width: 250px;
+  max-width: 207px;
   position: absolute;
-  bottom: 70%;
+  bottom: 65%;
   left: 0;
   /*float: left;*/
   /*margin-bottom: 15px;*/
@@ -581,20 +529,29 @@ li{
   box-sizing: border-box;
   padding: 4%;
 }
+.company{
+  margin-top: 20px;
+}
 .text{
   position: relative;
   max-width: 919px;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 18px;
+  line-height: 1;
   margin-bottom: 3%;
 }
-
+.masha_h{
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 700;
+}
 .work_list{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  line-height: 1;
+}
+.work_list li{
+  margin: -10px 0 -10px 0;
 }
 .work_list li::before{
   content: "\2022"; /* юникод точки */
@@ -608,7 +565,8 @@ li{
   margin-top: 20px;
 }
 .pastwork_container{
-  max-width: 982px;
+  /*min-width: 982px;*/
+  max-width: 1098px;
   margin: 0 auto;
 }
 /* заголовок */
@@ -616,7 +574,7 @@ li{
   font-weight: 700;
   font-size: 48px;
   line-height: 1;
-  text-align: right;
+  text-align: center;
 }
 .pastwork_h span{
   background: linear-gradient(92deg, #31C6FC 46.4%, #BC21E8 94.38%);
@@ -674,6 +632,7 @@ li{
   font-size: 27px;
 }
 .address{
+  text-align: center;
   font-weight: 700;
   line-height: 2;
   font-size: 27px;
@@ -954,6 +913,12 @@ div.form-example {
 
   }
 }
+@media only screen and (max-width: 510px){
+  .welcome__title{
+    font-size: 48px;
+    text-align: center;
+  }
+}
 @media only screen and (max-width:700px){
   .welcome__textdiv {
     width: 90%;
@@ -1000,6 +965,10 @@ div.form-example {
     font-size: 40px;
     text-align: center;
   }
+  .dragon{
+    height: 60%;
+    width: auto;
+  }
 }
 @media only screen and (max-width: 1270px){
   .container2{
@@ -1020,32 +989,38 @@ div.form-example {
     margin-bottom: 20px;
   }
   .dragon{
-    max-width: 60%;
+    max-width: 50%;
     height: auto;
+  }
+  .parent-info{
+    min-width: 0;
   }
 }
 @media only screen and (max-width: 1050px){
   .parent-info__title{
-    font-size: 18px;
+    font-size: 30px;
   }
   .container_text ul{
     font-size: 20px;
   }
   .dragon{
-    max-width: 60%;
+    max-width: 45%;
     height: auto;
+  }
+  .parent-info__title::before{
+    transform: scale(0.7);
   }
 }
 @media only screen and (max-width: 910px){
   .dragon{
-    max-width: 55%;
-    height: auto;
+    height: 45%;
+    width: auto;
   }
 }
 
 @media only screen and (max-width: 760px){
   .parent-info__title{
-    font-size: 14px;
+    font-size: 25px;
   }
   .container2{
     max-width: 75%;
@@ -1062,6 +1037,9 @@ div.form-example {
   }
 }
 @media only screen and (max-width: 690px){
+  .parent-info{
+    min-width: 0;
+  }
   .container2{
     max-width: 100%;
   }
@@ -1080,7 +1058,7 @@ div.form-example {
     max-height: 50%;
   }
   .parent-info__title::before{
-    content: '';
+    transform: scale(0.7);
   }
 }
 @media only screen and (max-width: 580px){
@@ -1108,35 +1086,37 @@ div.form-example {
 
 @media only screen and (min-width:1800px){
   .dragon{
-    height: 100%;
+    height: 70%;
     width: auto;
   }
-  .container2{
-    margin-left: 40%;
-  }
   .parent-info__textdiv{
-    min-width: 850px;
+    min-width: 1098px;
+    max-width: 1098px;
   }
 }
 @media only screen and (min-width:2150px){
   .container2{
-    margin-left: 20%;
     margin-bottom: 30px;
   }
   .parent-info__textdiv{
-    min-width: 1200px;
+    min-width: 1098px;
+    max-width: 1098px;
   }
   .parent-info__textdiv ul{
     font-size: 36px;
   }
+  .dragon{
+    height: auto;
+    width: 33%;
+  }
 }
 @media only screen and (min-width:2500px){
   .container2{
-    margin-left: 40%;
     margin-bottom: 30px;
   }
   .parent-info__textdiv{
-    min-width: 1200px;
+    max-width: 1098px;
+    min-width: 1098px;
   }
   .parent-info__textdiv ul{
     font-size: 36px;
@@ -1177,11 +1157,6 @@ div.form-example {
 @media only screen and (max-width: 1100px){
   .hide_sova{
     display: none;
-  }
-  .sova2{
-    max-height: 400px;
-    display: block;
-    margin: 0 auto;
   }
   .container4_secondline{
     margin: 0 auto;
@@ -1229,10 +1204,6 @@ div.form-example {
     line-height: 1.6;
   }
 
-  .sova2{
-    max-height: 250px;
-    width: auto;
-  }
 }
 @media only screen and (max-width: 650px){
   .container4_firstline div{
@@ -1246,33 +1217,7 @@ div.form-example {
     height: auto;
   }
 }
-/* БЛОКИ */
-/*@media only screen and (max-width: 1110px){
-  /* карты *//*
-  .for_h{
-    text-align: center;
-    margin: 30px auto;
-  }
-  .for_cards{
-    text-align: center;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 1;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-  }
-  .first_card{
-    margin-bottom: 1rem;
-    width: 75%;
-    border-radius: 15px;
-  }
-  .second_card{
-    margin-bottom: 1rem;
-    width: 75%;
-    border-radius: 15px;
-  }
-}*/
+
 @media only screen and (max-width: 1350px){
   .container3{
     max-width: 90%;
@@ -1297,8 +1242,15 @@ div.form-example {
     max-width: 80%;
     margin-bottom: 20px;
   }
+  .eight{
+    max-height: 45%;
+    width: auto;
+  }
 }
-@media only screen and (max-width: 1090px){
+@media only screen and (max-width: 1100px){
+  .for{
+    min-width: 0;
+  }
   .container3{
     max-width: 70%;
     margin-bottom: 20px;
@@ -1310,14 +1262,17 @@ div.form-example {
 }
 @media only screen and (max-width: 1050px){
   .for_h{
-    font-size: 18px;
+    font-size: 30px;
   }
   .container_text2 ul{
     font-size: 20px;
   }
   .eight{
-    max-width: 60%;
-    height: auto;
+    max-height: 45%;
+    width: auto;
+  }
+  .parent-info__textdiv2{
+    max-width: 100%;
   }
 }
 @media only screen and (max-width: 910px){
@@ -1354,7 +1309,7 @@ div.form-example {
   }
   .for_h{
     margin: 10px 0;
-    font-size: 24px;
+    font-size: 30px;
   }
   .parent-info__textdiv2{
     margin: 0px;
@@ -1366,9 +1321,7 @@ div.form-example {
     max-width: 100%;
     max-height: 50%;
   }
-  .for_h::before{
-    content: '';
-  }
+
 }
 @media only screen and (max-width: 580px){
   .for_h{
@@ -1380,6 +1333,9 @@ div.form-example {
   }
   .parent-info__textdiv2 ul li{
     margin: -15px 0;
+  }
+  .for_h::before{
+    content: '';
   }
 }
 @media only screen and (max-width: 350px){
@@ -1395,23 +1351,24 @@ div.form-example {
 
 @media only screen and (min-width:1800px){
   .eight{
-    height: 100%;
+    height: 60%;
     width: auto;
   }
   .container3{
-    margin-left: 40%;
+
   }
   .parent-info__textdiv2{
-    min-width: 850px;
+    max-width: 1098px;
+    min-width: 1098px;
   }
 }
 @media only screen and (min-width:2150px){
   .container3{
-    margin-left: 20%;
     margin-bottom: 30px;
   }
   .parent-info__textdiv2{
-    min-width: 1200px;
+    min-width: 1098px;
+    max-width: 1098px;
   }
   .parent-info__textdiv2 ul{
     font-size: 36px;
@@ -1419,11 +1376,11 @@ div.form-example {
 }
 @media only screen and (min-width:2500px){
   .container3{
-    margin-left: 40%;
     margin-bottom: 30px;
   }
   .parent-info__textdiv2{
-    min-width: 1200px;
+    min-width: 1098px;
+    max-width: 1098px;
   }
   .parent-info__textdiv2 ul{
     font-size: 36px;
@@ -1462,6 +1419,13 @@ div.form-example {
   }
 }
 @media only screen and (max-width: 520px){
+  .masha{
+    max-width: 150px;
+    height: auto;
+  }
+  .masha_h{
+    font-size: 30px;
+  }
   .block_works{
     margin-top: 30px;
   }
@@ -1476,6 +1440,19 @@ div.form-example {
   }
 }
 @media only screen and (max-width: 400px){
+  .masha{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+  }
+  .padding1{
+    padding-left: 0;
+  }
+}
+@media only screen and (max-width: 700px){
+  .masha_h{
+    text-align: center;
+  }
   .masha{
     position: relative;
     display: block;
